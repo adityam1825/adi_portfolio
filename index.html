@@ -22,7 +22,7 @@
       --muted2: #94a3b8;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; } /* Lenis handles smoothing — native smooth conflicts */
     body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; overflow-x: hidden; cursor: none; }
 
     .bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
@@ -196,7 +196,7 @@
     footer { padding:2rem 3rem; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--glass-border); }
     footer p { font-family:'Space Mono',monospace; font-size:0.62rem; color:var(--muted); letter-spacing:0.08em; }
 
-    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal { opacity:0; transform:translateY(36px); transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); will-change:opacity,transform; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
     @media (max-width:900px) {
@@ -227,7 +227,7 @@
 
   <section id="hero">
     <div class="hero-content">
-      <div class="hero-badge"><div class="hero-badge-dot"></div>Open to Internships · 2026–27</div>
+      <div class="hero-badge"><div class="hero-badge-dot"></div>Open to Internships · 2025–26</div>
       <h1 class="hero-name">Aditya<br><span class="line2">Mulge</span></h1>
       <p class="hero-role"><span>Full Stack Developer</span> · AI/ML Engineer · 3rd Year CSE</p>
       <p class="hero-desc">A driven engineer with a builder's mindset and a never-give-up attitude. I architect full-stack systems, deploy production AI/ML models, lead from the front at events and hackathons, and ship code through the night until the product is right.</p>
@@ -238,7 +238,7 @@
     </div>
     <div class="hero-float-cards">
       <div class="float-card"><div class="float-card-label">Exp. Graduation</div><div class="float-card-val">2027</div><div class="float-card-sub">B.Tech CSE · SU Kalaburagi</div></div>
-      <!-- <div class="float-card"><div class="float-card-label">Hackathon Wins</div><div class="float-card-val">3+</div><div class="float-card-sub">1st Prize · Top 5 · Runner-up</div></div> -->
+      <div class="float-card"><div class="float-card-label">Hackathon Wins</div><div class="float-card-val">3+</div><div class="float-card-sub">1st Prize · Top 5 · Runner-up</div></div>
       <div class="float-card"><div class="float-card-label">Projects Shipped</div><div class="float-card-val">6+</div><div class="float-card-sub">Web · AI/ML · Blockchain</div></div>
     </div>
   </section>
@@ -283,9 +283,8 @@
           <p>My technical expertise spans <strong>Full Stack Development, AI/ML Engineering, and Blockchain systems</strong> — from designing scalable Django backends and deploying edge AI models on NVIDIA Jetson hardware, to building decentralised Web3 platforms. I am particularly invested in <strong>Java Full Stack architecture</strong>, AI agents, and medical AI applications.</p>
           <p>Beyond engineering, I am an <strong>articulate communicator and confident public speaker</strong> — a quality that has earned me recognition at debate competitions, startup pitch events, and Mini Shark Tank. I take active ownership in <strong>technical event organisation and team leadership</strong>, ensuring that every initiative is executed with precision, energy, and purpose.</p>
           <p>I am a <strong>night coder with an unrelenting, never-give-up mentality</strong>. Roadblocks are not stops — they are redirections. When I'm not shipping code, you will find me hiking, travelling, or deep in a technology article.</p>
-          <p>A part-time Content Creator @ft.vibe_coder_404</p>
           <div class="about-contact-row">
-            <div class="contact-item"><div class="icon">✉</div><span><a href="mailto:adityamulge3334@gmail.com">adityamulge3334@gmail.com</a></span></div>
+            <div class="contact-item"><div class="icon">✉</div><span><a href="/cdn-cgi/l/email-protection#d6b7b2bfa2afb7bba3bab1b3e5e5e5e296b1bbb7bfbaf8b5b9bb"><span class="__cf_email__" data-cfemail="bedfdad7cac7dfd3cbd2d9db8d8d8d8afed9d3dfd7d290ddd1d3">[email&#160;protected]</span></a></span></div>
             <div class="contact-item"><div class="icon">📞</div><span>+91 9307698460</span></div>
             <div class="contact-item"><div class="icon">in</div><span><a href="https://www.linkedin.com/in/aditya-mulge987317291/" target="_blank">linkedin.com/in/aditya-mulge987317291</a></span></div>
             <div class="contact-item"><div class="icon">⌥</div><span><a href="https://github.com/adityam1825" target="_blank">github.com/adityam1825</a></span></div>
@@ -297,7 +296,7 @@
           <div class="stat-glass"><div class="stat-num">3rd</div><div class="stat-label">Year of Study</div></div>
           <div class="stat-glass"><div class="stat-num">6+</div><div class="stat-label">Projects Built</div></div>
           <div class="stat-glass"><div class="stat-num">6</div><div class="stat-label">AI Models Built</div></div>
-          <div class="stat-glass"><div class="stat-num">4+</div><div class="stat-label">events Wins</div></div>
+          <div class="stat-glass"><div class="stat-num">3+</div><div class="stat-label">Hackathon Wins</div></div>
         </div>
         <div class="glass-card" style="padding:2rem;margin-bottom:1.25rem;">
           <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">🎓 Education</div>
@@ -527,12 +526,11 @@
     <div class="contact-glass reveal">
       <h2 class="section-title" style="margin-bottom:0.75rem;">Let's work<br><em>together.</em></h2>
       <p style="color:var(--muted2);max-width:420px;margin:0 auto 1.5rem;line-height:1.7;font-size:0.95rem;">Whether you have an internship opportunity, a project collaboration, or simply want to connect — my inbox is always open.</p>
-      <a href="mailto:adityamulge3334@gmail.com" class="contact-email">adityamulge3334@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#a0c1c4c9d4d9c1cdd5ccc7c593939394e0c7cdc1c9cc8ec3cfcd" class="contact-email"><span class="__cf_email__" data-cfemail="b0d1d4d9c4c9d1ddc5dcd7d583838384f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</span></a>
       <div class="socials">
         <a href="https://github.com/adityam1825" target="_blank" class="social-btn">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/aditya-mulge987317291/" target="_blank" class="social-btn">LinkedIn ↗</a>
-        <a href="mailto:adityamulge3334@gmail.com" class="social-btn">Email ↗</a>
-        <a href="https://www.instagram.com/adi_185_?utm_source=qr&igsh=NWxjZXNqZnluejR4" target="_blank" class="social-btn">Instagram↗</a>
+        <a href="/cdn-cgi/l/email-protection#d8b9bcb1aca1b9b5adb4bfbdebebebec98bfb5b9b1b4f6bbb7b5" class="social-btn">Email ↗</a>
         <a href="tel:+919307698460" class="social-btn">+91 93076 98460</a>
       </div>
     </div>
@@ -544,6 +542,72 @@
   </footer>
 
   <script>
+    // ── Lenis smooth scroll ──────────────────────────────────────────────────
+    class Lenis {
+      constructor({ duration = 1.2, easing = t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth = true } = {}) {
+        this.duration = duration; this.easing = easing; this.smooth = smooth;
+        this.scrollY = window.scrollY; this.targetY = window.scrollY;
+        this.velocity = 0; this.raf = null; this.listeners = [];
+        this._onWheel = this._onWheel.bind(this);
+        this._onTouch = this._onTouch.bind(this);
+        this._onTouchMove = this._onTouchMove.bind(this);
+        this.touchStartY = 0;
+        window.addEventListener('wheel', this._onWheel, { passive: false });
+        window.addEventListener('touchstart', this._onTouch, { passive: true });
+        window.addEventListener('touchmove', this._onTouchMove, { passive: false });
+        this._raf();
+      }
+      _onWheel(e) {
+        e.preventDefault();
+        const speed = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaMode === 2 ? e.deltaY * window.innerHeight : e.deltaY;
+        this.targetY = Math.max(0, Math.min(document.body.scrollHeight - window.innerHeight, this.targetY + speed * 0.8));
+      }
+      _onTouch(e) { this.touchStartY = e.touches[0].clientY; }
+      _onTouchMove(e) {
+        e.preventDefault();
+        const delta = (this.touchStartY - e.touches[0].clientY) * 1.5;
+        this.touchStartY = e.touches[0].clientY;
+        this.targetY = Math.max(0, Math.min(document.body.scrollHeight - window.innerHeight, this.targetY + delta));
+      }
+      _raf() {
+        this.raf = requestAnimationFrame(() => {
+          const diff = this.targetY - this.scrollY;
+          if (Math.abs(diff) < 0.05) {
+            this.scrollY = this.targetY;
+          } else {
+            const t = this.easing(Math.min(1, 0.072));
+            this.scrollY += diff * t * (this.duration * 0.6);
+          }
+          window.scrollTo(0, this.scrollY);
+          this.listeners.forEach(fn => fn({ scroll: this.scrollY }));
+          this._raf();
+        });
+      }
+      on(fn) { this.listeners.push(fn); }
+      scrollTo(target, { offset = 0, duration = this.duration } = {}) {
+        let y = typeof target === 'number' ? target : (target instanceof Element ? target.getBoundingClientRect().top + this.scrollY : 0);
+        this.targetY = Math.max(0, Math.min(document.body.scrollHeight - window.innerHeight, y + offset));
+      }
+      destroy() {
+        window.removeEventListener('wheel', this._onWheel);
+        window.removeEventListener('touchstart', this._onTouch);
+        window.removeEventListener('touchmove', this._onTouchMove);
+        cancelAnimationFrame(this.raf);
+      }
+    }
+
+    const lenis = new Lenis({ duration: 1.4 });
+
+    // Smooth nav link scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) lenis.scrollTo(target, { offset: -80 });
+      });
+    });
+
+    // ── Cursor ───────────────────────────────────────────────────────────────
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let mx=0,my=0,rx=0,ry=0;
@@ -554,19 +618,23 @@
       el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.opacity='0.4';});
     });
 
+    // ── Scroll reveal ────────────────────────────────────────────────────────
     const revealEls=document.querySelectorAll('.reveal');
     const obs=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           const idx=Array.from(entry.target.parentNode.children).indexOf(entry.target);
-          setTimeout(()=>entry.target.classList.add('visible'),idx*80);
+          setTimeout(()=>entry.target.classList.add('visible'),idx*90);
           obs.unobserve(entry.target);
         }
       });
-    },{threshold:0.08});
+    },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
     revealEls.forEach(el=>obs.observe(el));
 
-    window.addEventListener('scroll',()=>{document.querySelector('.bg-mesh').style.transform=`translateY(${window.scrollY*0.08}px)`;});
+    // ── Parallax bg on scroll ────────────────────────────────────────────────
+    lenis.on(({ scroll }) => {
+      document.querySelector('.bg-mesh').style.transform = `translateY(${scroll * 0.06}px)`;
+    });
   </script>
 </body>
 </html>
